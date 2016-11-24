@@ -1,2 +1,2 @@
-# aymexx-gateway-modal-form
+# paymexx-gateway-modal-form
 Demo example that implements Paymexx Gateway payment using the modal form.
