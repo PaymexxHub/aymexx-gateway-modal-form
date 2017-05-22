@@ -64,7 +64,7 @@ $s = $_GET; ?>
 
 <br/><br/>
 
-<a href="index.html">Back to Checkout page</a>
+<a href="index.php">Back to Checkout page</a>
 <br/><br/><br/>
             
             
