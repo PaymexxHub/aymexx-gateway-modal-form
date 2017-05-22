@@ -36,7 +36,7 @@
          include 'functions.php';
          $secretKey = 'MERCHANT-SECRET-KEY';
          $amount = 10050.50;
-         $total = encrypt3Des($amount,$secretKey);
+         $total = encryptAmount($amount,$secretKey);
       ?>
         <div class="container">
             <h1><b>Test Web Store</b></h1>
@@ -110,6 +110,7 @@
                         <p>55 Kanike Street, Ikoyi, Lagos</p>
                         <br/>
                         <!-- Append payment form -->
+                        <form id="pmx_paynow">
                         <input type="hidden" name="pmx_product" id="pmx_product" value="" >
                         <input type="hidden" name="pmx_email" id="pmx_email" value="" >
                         <input type="hidden" name="pmx_phone" id="pmx_phone" value="" >
@@ -124,14 +125,14 @@
                         <input type="hidden" name="pmx_mid" id="pmx_mid" value="" >
                         <input type="hidden" name="pmx_currency" id="pmx_currency" value="">
                         <input type="hidden" name="pmx_env" id="pmx_env" value="" >
-                        <p style="text-align:center;"><button class="z-gateway-btn" id="pmx_paynow-btn" > </button></p>
-                      
+                        <p style="text-align:center;"> <button  type="submit" name="submit" class="z-gateway-btn"> </button> </p>
+                        </form>
                     </div>
                 </div>
         </div>
             
     <!---- Embed Paymexx  API --->
-<script src="https://paymexx.com/gateway/1.0/paymexx.js" type="text/javascript"></script>
+<script src="https://paymexx.com/gateway/1.1/paymexx.js" type="text/javascript"></script>
 
     </body>
 </html>
