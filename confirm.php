@@ -7,8 +7,6 @@ $s = $_GET; ?>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
-        <script src="https://code.jquery.com/jquery-3.1.1.js"
-        integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="  crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <style>
             body{ font-family:'Open Sans';font-size:16px;}
@@ -64,7 +62,7 @@ $s = $_GET; ?>
 
 <br/><br/>
 
-<a href="index.php">Back to Checkout page</a>
+<a href="index.html">Back to Checkout page</a>
 <br/><br/><br/>
             
             
