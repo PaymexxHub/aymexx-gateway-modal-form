@@ -5,8 +5,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
-        <script src="https://code.jquery.com/jquery-3.1.1.js"
-        integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="  crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <style>
             body{ font-family:'Open Sans';font-size:16px;}
@@ -32,12 +30,6 @@
         </style>
     </head>
     <body>
-      <?php 
-         include 'functions.php';
-         $secretKey = 'MERCHANT-SECRET-KEY';
-         $amount = 10050.50;
-         $total = encryptAmount($amount,$secretKey);
-      ?>
         <div class="container">
             <h1><b>Test Web Store</b></h1>
             <h2>Checkout </h2>
@@ -110,29 +102,30 @@
                         <p>55 Kanike Street, Ikoyi, Lagos</p>
                         <br/>
                         <!-- Append payment form -->
-                        <form id="pmx_paynow">
-                        <input type="hidden" name="pmx_product" id="pmx_product" value="" >
-                        <input type="hidden" name="pmx_email" id="pmx_email" value="" >
-                        <input type="hidden" name="pmx_phone" id="pmx_phone" value="" >
-                        <input type="hidden" name="pmx_firstname" id="pmx_firstname" value="" >
-                        <input type="hidden" name="pmx_lastname" id="pmx_lastname" value="">
-                        <input type="hidden" name="pmx_city" id="pmx_city" value="" >
-                        <input type="hidden" name="pmx_address" id="pmx_address" value="" >
-                        <input type="hidden" name="pmx_postcode" id="pmx_postcode" value="" >
-                        <input type="hidden" name="pmx_country" id="pmx_country" value="" >
-                        <input type="hidden" name="pmx_amount" id="pmx_amount" value="<?php echo $total;   ?>" >
-                        <input type="hidden" name="pmx_response_url" id="pmx_response_url" value="confirm.php" >
-                        <input type="hidden" name="pmx_mid" id="pmx_mid" value="" >
-                        <input type="hidden" name="pmx_currency" id="pmx_currency" value="">
-                        <input type="hidden" name="pmx_env" id="pmx_env" value="" >
-                        <p style="text-align:center;"> <button  type="submit" name="submit" class="z-gateway-btn"> </button> </p>
+                        <form>
+                        <p style="text-align:center;"> <button  onclick="payWithPaymexx()"  class="btn btn-primary btn-lg btn-block">  Pay with Paymexx</button> </p>
                         </form>
                     </div>
                 </div>
         </div>
             
     <!---- Embed Paymexx  API --->
-<script src="https://paymexx.com/gateway/1.1/paymexx.js" type="text/javascript"></script>
-
-    </body>
+<script src="https://paymexx.com/gateway/1.2/paymexx.min.js" type="text/javascript"></script>
+<script>
+  function payWithPaymexx(){
+      
+      var data = {
+          mid:'PMX-123456',
+          email:'example@abc.com',
+          shopname:'handbags',
+          env:'test',
+          amount:100,
+          reference:'TNX773732738',
+          firstname:'Benard',lastname:'Ofili',
+          address:'11 Alhaji Mogaji road, Ikeja',currency:234,
+          redirect_url:'http://localhost/paymexx/github/html/confirm.php'
+      };
+      Paymexx.init(data);
+  }  
+</script>     </body>
 </html>
