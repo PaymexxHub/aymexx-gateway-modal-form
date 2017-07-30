@@ -1,2 +1,2 @@
-# paymexx-gateway-modal-form
+# paymexx-inline
 Demo example that implements Paymexx Gateway payment using paymexx inline plugin.
